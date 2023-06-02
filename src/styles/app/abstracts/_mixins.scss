@@ -1,0 +1,22 @@
+@mixin edge-padding {
+  padding-left: #{fluid(10px, 33px)};
+  padding-right: #{fluid(10px, 33px)};
+}
+
+@mixin small-desktop {
+  @media (max-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin phone {
+  @media (max-width: 480px) {
+    @content;
+  }
+}

@@ -1,0 +1,117 @@
+.TestDefault {
+  background: #fff;
+  padding: #{fluid(15px, 35px)} 5px;
+  border-radius: 4px;
+
+  &--dark {
+    background: $black;
+    color: $white-dark-mode;
+  }
+
+  &__form {
+    padding: 0 40px;
+
+    @include phone {
+      padding: 0 5px;
+    }
+
+    &-config {
+      width: 100%;
+
+      &-btn {
+        text-decoration: none;
+        background: $bbu-blue;
+        color: $white;
+        border-radius: 8px;
+        padding: 14px 12px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: #{fluid(13px, 18px)};
+        cursor: pointer;
+        border: none;
+        font-family: $main-font;
+
+        &-image {
+          margin-left: 11px;
+        }
+      }
+
+      &-question {
+        font-size: #{fluid(15px, 18px)};
+        margin-bottom: #{fluid(12px, 25px)};
+      }
+
+      &-row {
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 38px;
+        gap: 23px;
+
+        @include phone {
+          flex-direction: column;
+        }
+
+        &-option {
+          cursor: pointer;
+          display: flex;
+          flex-direction: row;
+          border: 1px solid transparent;
+
+          &--dark {
+            &:hover {
+              border-color: $bbu-dark-mode-blue;
+            }
+          }
+
+          &:hover {
+            border-color: $bbu-blue;
+          }
+
+          &-input {
+            cursor: pointer;
+          }
+
+          &-label {
+            margin-right: 23px;
+            padding-left: 8px;
+            cursor: pointer;
+            color: $black;
+
+            &--dark {
+              color: $white-dark-mode;
+            }
+
+            @include phone {
+              margin-right: 0;
+            }
+
+            &:last-child {
+              margin-right: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__progress {
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    margin-bottom: #{fluid(15px, 40px)};
+  }
+
+  &__subtitle {
+    text-align: center;
+    font-size: #{fluid(15px, 18px)};
+  }
+
+  &__title {
+    text-align: center;
+    font-weight: 700;
+    font-size: #{fluid(20px, 26px)};
+    margin-bottom: #{fluid(8px, 15px)};
+  }
+}

@@ -1,0 +1,29 @@
+.body {
+  padding-top: 35px;
+  padding-bottom: 35px;
+  @include edge-padding;
+  background: #fff;
+  display: flex;
+  flex-direction: row;
+  gap: #{fluid(10px, 55px)};
+  height: fit-content;
+
+  @include phone {
+    flex-direction: column;
+  }
+
+  &--dark {
+    background: $black;
+  }
+}
+
+.home {
+  background: $white;
+  padding: #{fluid(10px, 40px)} #{fluid(20px, 60px)};
+  width: 100%;
+  border-radius: 8px;
+
+  &--dark {
+    background: $bbu-dark-mode-blue;
+  }
+}

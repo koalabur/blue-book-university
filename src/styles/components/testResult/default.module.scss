@@ -1,0 +1,70 @@
+.default {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  &__row {
+    max-width: #{fluid(300px, 800px)};
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+
+    @include phone {
+      flex-direction: column;
+    }
+
+    &-col {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      min-height: #{fluid(200px, 400px)};
+      padding: 10px 5px;
+      border: 4px solid $bbu-blue;
+
+      &--dark {
+        border-color: $bbu-dark-mode-blue;
+      }
+
+      &-result {
+        color: $white;
+        font-weight: 700;
+        font-size: #{fluid(26px, 40px)};
+
+        &--dark {
+          color: $white-dark-mode;
+        }
+      }
+
+      &--score {
+        background: $bbu-blue;
+
+        &--dark {
+          background: $bbu-dark-mode-blue;
+          border-color: $bbu-dark-mode-blue;
+        }
+      }
+
+      &-test {
+        font-size: #{fluid(20px, 26px)};
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: 5px;
+
+        &--dark {
+          color: $white-dark-mode;
+        }
+      }
+
+      &-text {
+        font-size: #{fluid(16px, 20px)};
+        text-align: center;
+
+        &--dark {
+          color: $white-dark-mode;
+        }
+      }
+    }
+  }
+}

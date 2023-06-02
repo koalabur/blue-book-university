@@ -1,0 +1,31 @@
+.caseStudy {
+  background: $white;
+  height: 100vh;
+  width: 100dvw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  &__link {
+    font-size: #{fluid(18px, 30px)};
+    color: $grey;
+    text-decoration: dashed underline $grey;
+    padding: 15px;
+    text-align: center;
+    transition: .2s ease-in-out;
+
+    &:hover {
+      color: $bbu-blue;
+      text-decoration: dashed underline $bbu-blue;
+    }
+  }
+
+  &__title {
+    font-size: #{fluid(30px, 100px)};
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: $black;
+    text-align: center;
+  }
+}

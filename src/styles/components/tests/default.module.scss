@@ -1,0 +1,71 @@
+.TestsDefault {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, calc(100% / 3 - 39px));
+  grid-gap: 39px;
+  justify-content: space-between;
+
+  @include small-desktop {
+    grid-template-columns: repeat(auto-fill, calc(100% / 2 - 39px));
+  }
+
+  @include tablet {
+    grid-template-columns: repeat(auto-fill, 100%);
+  }
+
+  &__item {
+    background: #fff;
+    border-radius: 4px;
+    padding: 19px 17px;
+
+    &::after {
+      content: "";
+      flex: auto;
+    }
+
+    &--dark {
+      background: $black;
+    }
+
+    &-desc {
+      font-size: #{fluid(15px, 16px)};
+      margin-bottom: 40px;
+
+      &--dark {
+        color: $white-dark-mode;
+      }
+    }
+
+    &-test {
+      font-size: #{fluid(16px, 20px)};
+      font-weight: 700;
+      margin-bottom: 21px;
+
+      &--dark {
+        color: $white-dark-mode;
+      }
+    }
+
+    &-top {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      margin-bottom: 12px;
+
+      &-class {
+        font-size: #{fluid(14px, 16px)};
+
+        &--dark {
+          color: $white-dark-mode;
+        }
+      }
+
+      &-teacher {
+        font-size: #{fluid(14px, 16px)};
+
+        &--dark {
+          color: $white-dark-mode;
+        }
+      }
+    }
+  }
+}

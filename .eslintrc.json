@@ -1,3 +1,13 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": "next",
+  "rules": {
+    "quotes": ["error", "double", { "allowTemplateLiterals": true }],
+    "indent": [
+      "error",
+      2,
+      { "SwitchCase": 1 },
+      { "flatTernaryExpressions": false }
+    ],
+    "semi": "error"
+  }
 }

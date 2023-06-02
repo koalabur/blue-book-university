@@ -1,0 +1,81 @@
+.sidebar {
+  border-radius: 8px;
+  background: $white;
+  display: inline-flex;
+  flex-direction: column;
+  padding: 14px 7px;
+  gap: 8px;
+
+  @include phone {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, calc(100% / 2 - 10px));
+    grid-gap: 10px;
+    gap: 0;
+    justify-content: space-between;
+  }
+
+  &--close {
+    max-width: 100px;
+  }
+
+  &--dark {
+    background: $bbu-dark-mode-blue;
+  }
+
+  &__item {
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: #{fluid(8px, 14px)};
+    cursor: pointer;
+    transition: 0.1s linear;
+    text-decoration: none;
+    border-radius: 4px;
+
+    &:hover,
+    &--active {
+      background: #fff;
+    }
+
+    &--dark {
+      &:hover,
+      &.sidebar__item--active {
+        background: $black;
+      }
+
+      &:hover > .sidebar__item-text,
+      &.sidebar__item--active > .sidebar__item-text {
+        color: $bbu-dark-mode-blue;
+      }
+
+      &:hover > .sidebar__item-icon,
+      &.sidebar__item--active > .sidebar__item-icon {
+        filter: invert(49%) sepia(93%) saturate(4001%) hue-rotate(160deg)
+          brightness(91%) contrast(86%);
+      }
+    }
+
+    &-text {
+      font-weight: 700;
+      font-size: #{fluid(13px, 17px)};
+      color: $black;
+
+      &--close {
+        display: none;
+      }
+    }
+
+    &-icon {
+      min-width: 30px;
+
+      @include phone {
+        min-width: 20px;
+      }
+
+      .sidebar__item--dark & {
+        filter: brightness(20%);
+      }
+    }
+  }
+}

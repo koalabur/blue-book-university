@@ -1,0 +1,25 @@
+.anchor,
+.button {
+  text-decoration: none;
+  background: $bbu-blue;
+  color: $white;
+  border-radius: 8px;
+  padding: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: #{fluid(13px, 18px)};
+  border: none;
+  cursor: pointer;
+  transition: .2s ease-in-out;
+  border: 2px solid transparent;
+
+  &:hover {
+    border-color: $white;
+    box-shadow: 0 0 0 2px $black;
+  }
+
+  &__image {
+    margin-left: 11px;
+  }
+}

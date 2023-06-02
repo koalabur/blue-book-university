@@ -1,0 +1,139 @@
+.nav {
+  display: flex;
+  flex-direction: column;
+
+  &__lower {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 17px;
+    padding-bottom: 17px;
+    @include edge-padding;
+    background: #fff;
+
+    @include phone {
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    &--dark {
+      background: $black;
+    }
+
+    &-left {
+      display: flex;
+      flex-direction: row;
+      gap: 16px;
+      align-items: center;
+
+      &-divider {
+        background: $black;
+        height: 44px;
+        width: 1px;
+
+        &--dark {
+          background: $bbu-dark-mode-blue;
+        }
+      }
+
+      &-title {
+        color: $bbu-blue;
+        font-weight: 700;
+        font-size: #{fluid(16px, 20px)};
+
+        &--dark {
+          color: $bbu-dark-mode-blue;
+        }
+      }
+    }
+
+    &-right {
+      display: flex;
+      align-items: center;
+
+      @include phone {
+        margin-top: 20px;
+      }
+
+      &-title {
+        color: $black;
+        font-size: #{fluid(16px, 20px)};
+
+        &--dark {
+          color: $white-dark-mode;
+        }
+        &--initials {
+          margin-left: #{fluid(12px, 20px)};
+          background: $bbu-blue;
+          color: $white;
+          padding: 8px;
+
+          &--dark {
+            background: $bbu-dark-mode-blue;
+          }
+        }
+      }
+    }
+  }
+
+  &__upper {
+    background: $bbu-blue;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding-top: 9px;
+    padding-bottom: 9px;
+    @include edge-padding;
+    gap: 34px;
+
+    @include tablet {
+      justify-content: space-between;
+    }
+
+    &--dark {
+      background: $bbu-dark-mode-blue;
+    }
+
+    &-item {
+      display: flex;
+      flex-direction: row;
+      gap: 12px;
+      align-items: center;
+
+      &--btn {
+        cursor: pointer;
+        border: 1px solid transparent;
+        padding: 3px;
+
+        &:hover {
+          border-color: $white;
+        }
+
+        &--dark {
+          &:hover {
+            border-color: $black;
+          }
+        }
+      }
+
+      &-icon {
+        width: 20px;
+        &--dark {
+          -webkit-filter: invert(90%); /* Safari/Chrome */
+          filter: invert(90%);
+        }
+      }
+
+      &-text {
+        color: $white;
+        font-size: #{fluid(14px, 18px)};
+
+        &--dark {
+          color: $black;
+        }
+      }
+    }
+  }
+}
