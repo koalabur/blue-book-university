@@ -2,12 +2,7 @@
   "extends": "next",
   "rules": {
     "quotes": ["error", "double", { "allowTemplateLiterals": true }],
-    "indent": [
-      "error",
-      2,
-      { "SwitchCase": 1 },
-      { "flatTernaryExpressions": false }
-    ],
+    "indent": ["error", 2, { "SwitchCase": 1 }, { "flatTernaryExpressions": false }],
     "semi": "error"
   }
 }

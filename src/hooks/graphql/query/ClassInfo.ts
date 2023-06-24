@@ -1,14 +1,23 @@
+import { ObjectId } from "mongodb";
+import clientPromise from "../../../lib/mongo";
+
 export default async function ClassInfo(
-  parent: { classId: string },
+  parent: { classId: ObjectId },
   args: unknown
 ) {
   const classId = parent.classId;
-  const classRes = await fetch(`${process.env.NEXT_PUBLIC_URL}/api/classes`);
-  const res = await classRes.json();
+  try {
+    const client = await clientPromise;
+    const db = client.db("learning_portal");
 
-  // Compare and filter matching elements
-  const matches = res.filter((obj: { _id: string }) =>
-    classId.includes(obj._id)
-  );
-  return matches;
+    const classes = await db
+      .collection("classes")
+      .find({ _id: classId })
+      .limit(100)
+      .toArray();
+
+    return classes;
+  } catch (error) {
+    console.error(error);
+  }
 }

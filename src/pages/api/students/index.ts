@@ -12,7 +12,6 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
       .find({})
       .limit(20)
       .toArray();
-
     res.json(students);
   } catch (error) {
     console.error(error);
