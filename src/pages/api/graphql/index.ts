@@ -35,6 +35,7 @@ export default createYoga<{
         students: [student]
         teacher(id: ID!): teacher
         teachers: [teacher]
+        tests: [tests]
       }
       # inside student and students from RootQuery
       type student {
@@ -109,6 +110,7 @@ export default createYoga<{
         students: (parent, args) => Students(parent, args),
         teacher: (parent, args) => Teacher(parent, args),
         teachers: (parent, args) => Teachers(parent, args),
+        tests: (parent, args) => Tests(parent, args),
       },
       student: {
         tests: (parent, args) => Class(parent, args),
@@ -119,7 +121,7 @@ export default createYoga<{
         classInfo: (parent, args) => ClassInfo(parent, args),
       },
       class: {
-        tests: async (parent, args) => Tests(parent, args),
+        tests: (parent, args) => Tests(parent, args),
       },
     },
   }),

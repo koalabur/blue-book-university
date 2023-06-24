@@ -5,6 +5,7 @@ const client = new ApolloClient({
   link: createHttpLink({
     uri: `${process.env.NEXT_PUBLIC_URL}/api/graphql`,
     credentials: "same-origin",
+    fetch,
   }),
   cache: new InMemoryCache(),
 });

@@ -35,8 +35,8 @@ export default function App({ Component, pageProps }: AppProps) {
   const Router = useRouter();
   if (Router.pathname.startsWith("/portal")) {
     return (
-      <ApolloProvider client={client}>
-        <Provider store={store}>
+      <Provider store={store}>
+        <ApolloProvider client={client}>
           <PersistGate loading={null} persistor={persistor}>
             <SessionProvider session={pageProps.session}>
               <div className={gfont.variable}>
@@ -46,13 +46,13 @@ export default function App({ Component, pageProps }: AppProps) {
               </div>
             </SessionProvider>
           </PersistGate>
-        </Provider>
-      </ApolloProvider>
+        </ApolloProvider>
+      </Provider>
     );
   }
   return (
-    <ApolloProvider client={client}>
-      <Provider store={store}>
+    <Provider store={store}>
+      <ApolloProvider client={client}>
         <PersistGate loading={null} persistor={persistor}>
           <SessionProvider session={pageProps.session}>
             <div className={gfont.variable}>
@@ -60,7 +60,7 @@ export default function App({ Component, pageProps }: AppProps) {
             </div>
           </SessionProvider>
         </PersistGate>
-      </Provider>
-    </ApolloProvider>
+      </ApolloProvider>
+    </Provider>
   );
 }
