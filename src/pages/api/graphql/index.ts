@@ -1,6 +1,7 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import { createYoga, createSchema } from "graphql-yoga";
 import type { NextApiRequest, NextApiResponse } from "next";
+import allowCors from "@/utils/cors";
 
 // Queries
 import Student from "@/hooks/graphql/query/Student";
@@ -25,6 +26,10 @@ export default createYoga<{
   req: NextApiRequest;
   res: NextApiResponse;
 }>({
+  cors: {
+    origin: "*",
+    credentials: true,
+  },
   graphqlEndpoint: "/api/graphql",
   schema: createSchema({
     typeDefs: /* GraphQL */ `

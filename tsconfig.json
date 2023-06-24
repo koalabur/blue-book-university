@@ -25,6 +25,6 @@
     "src/lib/mongo/index.ts",
     "src/pages/api/students/index.ts",
     "src/pages/portal/test/[id]"
-  ],
+, "src/utils/cors.js"  ],
   "exclude": ["node_modules"]
 }
