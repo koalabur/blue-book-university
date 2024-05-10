@@ -124,7 +124,7 @@ export default createYoga<{
         createdBy: (parent, args) => CreatedBy(parent, args),
       },
       class: {
-        tests: (parent, args) => Tests(parent, args),
+        tests: () => Tests(),
       },
     },
   }),
