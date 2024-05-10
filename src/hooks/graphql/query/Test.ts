@@ -1,15 +1,15 @@
 import { ObjectId } from "mongodb";
 import clientPromise from "../../../lib/mongo";
 
-export default async function Test(parent: unknown, args: { id: string }) {
-  const testId = new ObjectId(args.id);
+export default async function Test(parent: unknown, args: { id: String }) {
+  const objectId = new ObjectId(args.id as string);
   try {
     const client = await clientPromise;
     const db = client.db("learning_portal");
 
-    const tests = await db.collection("tests").findOne({ _id: testId });
+    const test = await db.collection("tests").findOne({ _id: objectId });
 
-    return tests;
+    return test;
   } catch (error) {
     console.error(error);
   }

@@ -110,7 +110,7 @@ export default createYoga<{
         students: (parent, args) => Students(parent, args),
         teacher: (parent, args) => Teacher(parent, args),
         teachers: (parent, args) => Teachers(parent, args),
-        tests: (parent, args) => Tests(parent, args),
+        tests: () => Tests(),
       },
       student: {
         tests: (parent, args) => Class(parent, args),
@@ -119,6 +119,9 @@ export default createYoga<{
       tests: {
         createdBy: (parent, args) => CreatedBy(parent, args),
         classInfo: (parent, args) => ClassInfo(parent, args),
+      },
+      test: {
+        createdBy: (parent, args) => CreatedBy(parent, args),
       },
       class: {
         tests: (parent, args) => Tests(parent, args),
