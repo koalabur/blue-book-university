@@ -10,13 +10,13 @@ export default async function CreatedBy(
     const client = await clientPromise;
     const db = client.db("learning_portal");
 
-    const classes = await db
-      .collection("classes")
+    const teachers = await db
+      .collection("teachers")
       .find({ _id: teacherId })
       .limit(100)
       .toArray();
 
-    return classes;
+    return teachers;
   } catch (error) {
     console.error(error);
   }
