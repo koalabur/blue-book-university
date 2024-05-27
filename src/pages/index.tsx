@@ -174,7 +174,7 @@ export default function Home() {
               password: password
             </p>
           </div>
-          <Link className={styles["login__col-case"]} href="/case-study">Tell me about this app &#9998;</Link>
+          {/* <Link className={styles["login__col-case"]} href="/case-study">Tell me about this app &#9998;</Link> */}
         </div>
       </main>
     </>
