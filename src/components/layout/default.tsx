@@ -15,6 +15,7 @@ import Toggle from "../ui/toggle";
 
 // Styles
 import styles from "@/styles/components/layout/default.module.scss";
+import { useEffect } from "react";
 
 export default function LayoutDefault({
   children,
@@ -32,6 +33,17 @@ export default function LayoutDefault({
     dispatch(clearUser());
     signOut();
   }
+
+  useEffect(() => {
+    switch (theme) {
+      case true:
+        document.body.classList.remove("dark");
+        break;
+      case false:
+        document.body.classList.add("dark");
+        break;
+    }
+  }, [theme]);
 
   //********************************/
   //***** USER FACING BELOW ******//

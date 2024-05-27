@@ -16,6 +16,10 @@ html {
   scroll-behavior: smooth;
 }
 
+body.dark {
+  background: $black;
+}
+
 p,
 h1,
 h2,
